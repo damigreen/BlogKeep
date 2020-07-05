@@ -1,38 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,500;0,900;1,400&display=swap');
+
 .App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  background-color: #ebebeb;
+  
+  width: 100%;
+  margin: 0 auto;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  
+  /* Small Devices,  */
+  @media only screen and (max-width: 600px) {
+    width: 75%;
+    background-color: yellow;
+  }
+  
+  /* Small Devices, Tablets */
+  @media only screen and (min-width : 768px) {
+    width: 75%;
+    background-color: green;
+  }
+  
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px) {
+    width: 50%;
+    background-color: pink;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* 
+Style for the App Component
+*/
+
+.app-layout {
+  background-color: #ebebeb;
+}
+
+.container {
+  background-color: #ebebeb;
+  width: 100%;
+  margin: 0 auto;
+}
+/* 
+Style for the Blogs Component
+*/
+div .blog-container {
+  width: 100%;
+  padding: 2em;
+}
+
+.row-style {
+  background-color: #242b31;
+}
+/* Also used in styling the Blog Link Comompoent */
+.col-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
+
+
+  /* 
+  .blogHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  } */
+  /* .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+  } */
