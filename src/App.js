@@ -30,12 +30,6 @@ import {
   Layout,
 } from 'antd'
 
-const contentStyle = {
-  margin: '0 auto',
-  // width : '90%'
-  // width: '800px'
-  width: '60rem'
-}
 
 function App(props) {
   const [users, setUsers] = useState([])
@@ -43,7 +37,7 @@ function App(props) {
   const password = useField('password')
   let user = props.user
   let blogs = props.blogs
-  
+
   const { Header, Content, Footer } = Layout
 
   const blogFormRef = React.createRef();
@@ -95,13 +89,13 @@ function App(props) {
   return (
     <Router>
       <Layout className="app-layout">
-        <Header className="app-layout header">
+        <Header className="nav-main">
           <Navigation />
         </Header>
 
-        <Content style={contentStyle}>
+        <Content>
           <Notification />
-              <Togglable buttonLabel='create new' ref={blogFormRef}>
+              <Togglable buttonLabel='CREATE NEW' ref={blogFormRef}>
                 <NewBlog
                   user={user}
                   blogFormRef={blogFormRef} />
@@ -109,7 +103,7 @@ function App(props) {
 
 
               <Route exact path="/" render={() => (
-                <Blogs />
+                <Blogs/>
               )} 
               />
               <Route exact path="/Users" render={() => 
