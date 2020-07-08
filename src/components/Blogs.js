@@ -68,7 +68,6 @@ const HeaderDiv = styled.div`
 `;
 
 const BlogsHeader = styled.h3`
-  padding-left: 5px;
   color: #ffffff;
 `;
   
@@ -88,13 +87,6 @@ const List = styled.div`
     border: 1px solid red;
   })
 `;
-
-// const colStyle = {
-//   display: 'flex',
-//   flexDirection: 'row',
-//   alignItems: 'center',
-//   justifyContent: 'space-between',
-// }
 
 const Blogs = (props) => {
   const blogs = props.blogs
@@ -116,17 +108,15 @@ const Blogs = (props) => {
 
   return (
     <div className="blog-container">
-      <Row className="row-style" style={{border: '1px solid green', height: '6vh'}}>
-        <Col className="col-list" >
-          <BlogsHeader>BLOGS</BlogsHeader>
-          <AuthorHeader>AUTHOR</AuthorHeader>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          {blogList}
-        </Col>
-      </Row>
+        <Row className="col-list-flex header" >
+          <Col><BlogsHeader>BLOGS</BlogsHeader></Col>
+          <Col><AuthorHeader>AUTHOR</AuthorHeader></Col>
+        </Row>
+        <Row>
+          <Col>
+            {blogList}
+          </Col>
+        </Row>
     </div>
 
   )
