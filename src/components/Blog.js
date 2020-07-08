@@ -10,38 +10,28 @@ import styled from 'styled-components'
 import { Row, Col } from  'antd'
 
 const BlogWrapper = styled.div`
-  // border: 1px solid green;
-  width: 800px
-  `;
-  
-const BlogLinkTitle = styled.div`
-// border: 1px solid green;
-  padding: 20px 0 0 5px
+  width: 100%;
+  margin-top: 7px;
 `;
-
-const BlogLinkAuthor = styled.div`
-  // border: 1px solid red;
-  padding: 20px 5px 0 0 
-`;
-
-
 
 const Blog = ({ blog, ...props }) => {
 
   const linkStyle = {
     height: 70,
-    border: '1 solid blue',
     backgroundColor: props.color,
   }
 
   
   return (
-    <Row>
-      <Col span={24} className="col-list" style={linkStyle}>
-        <Link to={`/Blogs/${blog.id}`} style={{paddingLeft: '10px'}} >{blog.title}</Link>
-        <Link to={`/Blogs/${blog.id}`} style={{paddingRight: '10px'}} >{blog.author}</Link>
-      </Col>
-    </Row>
+    <BlogWrapper>
+      <Row>
+        <Col className="col-list-flex" style={linkStyle}>
+          <Link to={`/Blogs/${blog.id}`} style={{paddingLeft: '10px'}} >{blog.title}</Link>
+          <Link to={`/Blogs/${blog.id}`} style={{paddingRight: '10px'}} >{blog.author}</Link>
+        </Col>
+      </Row>
+
+    </BlogWrapper>
   );
 };
 
