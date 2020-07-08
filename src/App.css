@@ -38,46 +38,63 @@ Style for the App Component
   background-color: #ebebeb;
 }
 
-.container {
-  background-color: #ebebeb;
-  width: 100%;
-  margin: 0 auto;
+.nav-main {
+  background-color: #242b31;
+  size: 100%;
 }
+
+.nav-main.bar {
+  background-color: #242b31;
+  size: 100%;
+}
+
 /* 
 Style for the Blogs Component
 */
-div .blog-container {
-  width: 100%;
-  padding: 2em;
+.blog-container {
+  margin: 0 auto;
+  width: 800px;
+  padding: 1em;
 }
 
-.row-style {
-  background-color: #242b31;
-}
 /* Also used in styling the Blog Link Comompoent */
-.col-list {
+.col-list-flex {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
+.col-list-flex.header {
+  background-color: #242b31;
+  width: 87.7%;
+  padding: 5px;
+  height: 6vh;
+  
+}
 
+.text {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
+.form-div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 2px solid green;
+}
 
+.submit {
+  cursor: pointer;
+}
 
-  /* 
-  .blogHeader {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-  } */
-  /* .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 20%;
-  } */
+.submit:hover {
+  background-color: #45a049;
+}
