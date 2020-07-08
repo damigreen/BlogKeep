@@ -6,7 +6,6 @@ import useField from '../hooks/index'
 import { likeBlog } from '../reducers/blogReducer'
 import { deleteBlog } from '../reducers/blogReducer'
 import { commentBlog }  from '../reducers/blogReducer'
-import styled from 'styled-components'
 import {
   Row, 
   Col,
@@ -18,44 +17,34 @@ import {
 import moment from 'moment';
 
 
-const blogListStyle = {
-  padding: 0,
-  margin: 0,
-  listStyle: 'none'
-}
-
-
-
 function BlogInfo({ blog, ...props }) {
+  console.log(blog)
   const comment = useField('text')
   
   if (blog === undefined) {
     return null
   }
 
-  // const data = [
-  //   {
-  //     actions: [<span key="comment-list-reply-to-0">Reply to</span>],
-  //     // author: 'Han Solo',
-  //     avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-  //     content: blog.comments.map(comment => (
-  //       <p>{comment}</p>
-  //     )),
-  //     datetime: (
-  //       <Tooltip
-  //         title={moment()
-  //           .subtract(1, 'days')
-  //           .format('YYYY-MM-DD HH:mm:ss')}
-  //       >
-  //         <span>
-  //           {moment()
-  //             .subtract(1, 'days')
-  //             .fromNow()}
-  //         </span>
-  //       </Tooltip>
-  //     ),
-  //   },
-  // ]
+  const data = blog.comments
+    .map(comment => ({
+      // actions: [<span key="comment-list-reply-to-0">Reply to</span>],
+      author: blog.user.name,
+      avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+      content: <p>{comment}</p>,
+      datetime: (
+        <Tooltip
+          title={moment()
+            .subtract(1, 'days')
+            .format('YYYY-MM-DD HH:mm:ss')}
+        >
+          <span>
+            {moment()
+              .subtract(1, 'days')
+              .fromNow()}
+          </span>
+        </Tooltip>
+      ),
+    }))
 
 
   const addComment = event => {
@@ -87,25 +76,31 @@ function BlogInfo({ blog, ...props }) {
         <br />
         <br />
       <a href={blog.url} target='_blank'  rel="noopener noreferrer">
-        <Row>
-          <Col className='col-header'><h2>{blog.title} {blog.author} </h2></Col>
-        </Row>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          <br />
+          <br />
+            <Row>
+              <Col className='col-header'><h2>{blog.title} by {blog.author} </h2></Col>
+            </Row>
+            <Divider orientation='center' >Blog info</Divider>
+        <div>
+          <Row>
+            <Col className='col-link'><a target='_blank' rel="noopener noreferrer" href={blog.url}>{blog.url}</a></Col>
+          </Row>
+          <br />
+          <Row>
+            <Col>
+              <div>{blog.likes} <button onClick={addLike}>likes</button></div>
+            </Col>
+            <Col>
+              <div><button onClick={removeBlog}>remove</button></div>
+            </Col>
+            <Col offset={6} className='col-user'><p>added by {blog.user.name}</p></Col>
+          </Row>
 
-        <Divider orientation='left' >Blog info</Divider>
-
-        <Row>
-          <Col className='col-link'><div><a target='_blank' rel="noopener noreferrer" href={blog.url}>{blog.url}</a></div></Col>
-        </Row>
+      </div>
+      </div>
       </a>
-        <Row>
-          <Col className='col-user'><p>added by {blog.user.name}</p></Col>
-        </Row>
-        <Row>
-          <Col className='col-button' style={{display: 'flex', flexDirection: 'row'}}>
-            <div>{blog.likes} <button onClick={addLike}>likes</button></div>
-            <div><button onClick={removeBlog}>remove</button></div>
-          </Col>
-        </Row>
         <br />
         <br />
         <br />
@@ -117,20 +112,10 @@ function BlogInfo({ blog, ...props }) {
               <h4>comments</h4>
               <input {...comment.form} />
               <button type="submit">add comment</button>
-              <ul>
-                {blog.comments
-                  .map(comment => (
-                    <li>{comment}</li>
-                  )
-                  )}
-              </ul>
-              <br />
-              <br />
-              
             </form>
           </Col>
         </Row>
-        {/* <List
+        <List
           className="comment-list"
           header={`${data.length} replies`}
           itemLayout="horizontal"
@@ -138,15 +123,15 @@ function BlogInfo({ blog, ...props }) {
           renderItem={item => (
           <li>
             <Comment
-              actions={item.actions}
+              // actions={item.actions}
               author={item.author}
-              // avatar={item.avatar}
+              avatar={item.avatar}
               content={item.content}
               datetime={item.datetime}
             />
           </li>
            )}
-        /> */}
+        />
       </div>
 
   );
