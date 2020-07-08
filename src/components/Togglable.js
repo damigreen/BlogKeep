@@ -1,4 +1,5 @@
 import React, { useState, useImperativeHandle } from 'react';
+import { Button } from 'antd'
 
 const Togglable = React.forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false);
@@ -17,11 +18,11 @@ const Togglable = React.forwardRef((props, ref) => {
   return (
     <div>
       <div style={showWhenVisible}>
-        <button onClick={toggleVisibility}>{props.buttonLabel}</button>
+        <Button onClick={toggleVisibility}>{props.buttonLabel}</Button>
       </div>
       <div style={hideWhenVisible}>
         {props.children}
-        <button onClick={toggleVisibility}>cancel</button>
+        <Button onClick={toggleVisibility}>CANCEL</Button>
       </div>
     </div>
   );

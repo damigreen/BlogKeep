@@ -4,14 +4,18 @@ import useField from '../hooks/index'
 
 import { createBlog } from '../reducers/blogReducer'
 import { setNotification } from '../reducers/notificationReducer'
+import '../App.css'
+import{ Button } from 'antd';
+
 
 
 const NewBlog = ({ setMessage, blogFormRef, ...props }) => {
   const newTitle = useField('text')
   const newAuthor = useField('text')
   const newUrl = useField('text')
+  // const [form] = Form.useForm();
 
-  const createBlog = async (event) => {
+  const submitBlog = async (event) => {
     event.preventDefault();
     const newBlog = {
       title: newTitle.form.value,
@@ -26,29 +30,32 @@ const NewBlog = ({ setMessage, blogFormRef, ...props }) => {
       newTitle.reset()
       newAuthor.reset()
       newUrl.reset()
-    } catch (exception) {
+    }
+    catch (exception) {
       props.setNotification('Validation error: please enter the required filed(s) ');
     }
   };
 
   return (
-    <div>
-      <form onSubmit={createBlog}>
-        <h1>create new</h1>
+    <div className='form-div'>
+      <form onSubmit={submitBlog}>
+        <h1>CREATE A NEW BLOG</h1>
         <div>
-          title:
-          <input {...newTitle.form} />
+          <label for='title'>Title</label>
+          <input className='text' {...newTitle.form} />
         </div>
         <div>
-          author:
-          <input {...newAuthor.form} />
+          <label for='author'>Author</label>
+          <input className='text' {...newAuthor.form} />
         </div>
         <div>
-          url:
-          <input {...newUrl.form} />
+          <label for='url'>Url</label>
+          <input className='text' {...newUrl.form} />
         </div>
-        <button type="submit">create</button>
+        <Button className='submit' htmlType="submit" type='primary'>CREATE</Button>
       </form>
+      <br />
+      <br />
     </div>
   );
 };
@@ -67,4 +74,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewBlog);
+) (NewBlog);
