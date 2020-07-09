@@ -53,7 +53,8 @@ Style for the Blogs Component
 */
 .blog-container {
   margin: 0 auto;
-  width: 800px;
+  /* width: 800px; */
+  width: 50em;
   padding: 1em;
 }
 
@@ -63,12 +64,12 @@ Style for the Blogs Component
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 50em;
 }
 
 .col-list-flex.header {
   background-color: #242b31;
-  width: 87.7%;
+  width: 48em;
   padding: 5px;
   height: 6vh;
   
@@ -84,11 +85,20 @@ Style for the Blogs Component
   box-sizing: border-box;
 }
 
+.toggle{
+  margin: 0 auto;
+  width: 48em;
+}
+
 .form-div {
-  border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-  border: 2px solid green;
+  margin: 0 auto;
+  width: 48em;
+  margin-top: 10px;
+  border: 2px solid #242b31;
+  height: 55vh;
+
 }
 
 .submit {
@@ -98,3 +108,46 @@ Style for the Blogs Component
 .submit:hover {
   background-color: #45a049;
 }
+
+/*
+Blog Content
+*/
+
+.blog-text-foot{
+  font-family: Georgia, 'Times New Roman', Times, sans-serif;
+  color: grey;
+  font-size: 13;
+  float: right;
+}
+
+.blog-content {
+  /* border: 1px solid green; */
+  background-color: #ffffff;
+  margin: 0 auto;
+  width: 50%;
+  border-width: 1px 1px 1px 7px;
+  box-shadow: 0.1em 0.1em 0.1em 0.1em;
+  overflow: hidden;
+}
+
+.blog-comment {
+  /* border: 1px solid red */
+}
+
+.blog-comment .input{
+  margin: 0 auto;
+  width: 100%;
+}
+
+.blog-comment .list{
+  padding: 5px;
+}
+
+.input-form{
+  width: 59em;
+  padding: 5px;
+}
+
+/* .form-size {
+  width
+} */
