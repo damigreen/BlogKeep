@@ -92,50 +92,45 @@ function BlogInfo({ blog, ...props }) {
 
   return (
     <div className='blog-content'>
-        <br />
-        <br />
-      {/* <a href={blog.url} target='_blank'  rel="noopener noreferrer"> */}
+      <br />
+      <br />
+      <a href={blog.url} target='_blank'  rel="noopener noreferrer">
         <div className='blog-info' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <br />
           <br />
+          <Row>
+            <Col className='col-header'><h2>{blog.title}</h2></Col>
+          </Row>
+          <Divider orientation='center' >Blog info</Divider>
+          <div>
             <Row>
-              <Col className='col-header'><h2>{blog.title}</h2></Col>
+              <Col><a style={{padding: '5px'}} target='_blank' rel="noopener noreferrer" href={blog.url}>{blog.url}</a></Col>
             </Row>
-            <Divider orientation='center' >Blog info</Divider>
-        <div>
-          <Row>
-            <Col className='col-link'><a target='_blank' rel="noopener noreferrer" href={blog.url}>{blog.url}</a></Col>
-          </Row>
-          <br />
-          <Row>
-            <Col>
-              {/* <div  className='blog-text-foot'>{blog.likes} <button onClick={addLike}>likes</button></div> */}
-              <div>
-                <em style={{padding: '5px'}}>{blog.likes}</em><HeartOutlined onClick={addLike} style={{fontSize: '15px', padding: '5px', color: 'grey'}} />
+            <br />
+            <Row className='col-list-flex info' >
+              <Col>
+                <div>
+                  <em style={{padding: '5px'}}>{blog.likes}</em><HeartOutlined onClick={addLike} style={{fontSize: '15px', padding: '5px', color: 'grey'}} />
+                  <DeleteOutlined style={{fontSize: '15px', padding: '5px', color: 'red'}} onClick={removeBlog} />
+                </div>
+              </Col>
+              <Col className='blog-text-foot'><p>added by {blog.user.name}</p></Col>
+            </Row>
 
-              </div>
-            </Col>
-            <Col>
-              <DeleteOutlined style={{fontSize: '15px', padding: '5px', color: 'red'}} onClick={removeBlog} />
-            </Col>
-            <Col offset={10} className='blog-text-foot'><p>added by {blog.user.name}</p></Col>
-          </Row>
-
+          </div>
         </div>
-        </div>
-      {/* </a> */}
+      </a>
         <br />
         <br />
         <br />
 
-        <Divider>COMMENTS</Divider>
+        <Divider >COMMENTS</Divider>
 
         <div className='blog-comment' >
-          <Row className='blog-comment input'>
+          <Row>
             <Col>
-              <form className='input-form' onSubmit={addComment}>
-                <h4>{blog.comments.length} comments</h4>
-                <TextArea placeholder='Add a comment...' {...comment.form} row={3} />
+              <form  onSubmit={addComment}>
+                <TextArea className='input-form' placeholder='Add a comment...' {...comment.form} row={3} />
                 <Button type='submit' >ADD COMMENT</Button>
               </form>
             </Col>
@@ -143,7 +138,7 @@ function BlogInfo({ blog, ...props }) {
 
           <List
             className="blog-comment list"
-            header={`${data.length} replies`}
+            header={`${data.length} comments`}
             itemLayout="horizontal"
             dataSource={data}
             renderItem={item => (

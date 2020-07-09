@@ -48,8 +48,6 @@ Style for the App Component
 /* 
 Navigation
 */
-
-
 .nav-main {
   display: flex;
   flex-direction: row;
@@ -82,6 +80,10 @@ Style for the Blogs Component
   align-items: center;
   justify-content: space-between;
   width: 50em;
+}
+.col-list-flex {
+  width: auto;
+  padding: 5px;
 }
 
 .col-list-flex.header {
@@ -138,33 +140,29 @@ Blog Content
 }
 
 .blog-content {
-  /* border: 1px solid green; */
-  background-color: #ffffff;
+  background-color: #E0e0e0;
   margin: 0 auto;
-  width: 50%;
+  width: 55%;
   border-width: 1px 1px 1px 7px;
   box-shadow: 0.1em 0.1em 0.1em 0.1em;
   overflow: hidden;
 }
 
 .blog-comment {
-  /* border: 1px solid red */
+  margin: 0 auto;
+  width: auto;
 }
 
-.blog-comment .input{
-  margin: 0 auto;
-  width: 100%;
-}
 
 .blog-comment .list{
   padding: 5px;
 }
 
 .input-form{
-  width: 59em;
-  padding: 5px;
+  max-width: 60em;
+  min-width: 30px;
+  display: inline-block;
+  width: 55em;
+  padding: 10px;
+  padding-left: 10px;
 }
-
-/* .form-size {
-  width
-} */
