@@ -2,10 +2,13 @@ import React, { useState, useImperativeHandle } from 'react';
 import { Button } from 'antd'
 
 const toggleButton = {
-  borderRadius: '1px',
   // color:
   // fontFamily: 'Georgia, "Times New Roman", Times, serif',
-  fontWeight: 'bold',
+  fontWeight: '123px',
+  backgroundColor: '#242b31',
+  color: '#ffffff',
+  border: '2px solid #242b31',
+  margin: '5px'
 
 }
 
@@ -30,7 +33,7 @@ const Togglable = React.forwardRef((props, ref) => {
       </div>
       <div style={hideWhenVisible}>
         {props.children}
-        <Button onClick={toggleVisibility}>CANCEL</Button>
+        <Button style={toggleButton} onClick={toggleVisibility}>CANCEL</Button>
       </div>
     </div>
   );

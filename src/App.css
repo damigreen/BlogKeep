@@ -38,22 +38,39 @@ Style for the App Component
   background-color: #ebebeb;
 }
 
+.nav-header{
+  background-color: #242b31;
+  height: 10vh;
+  width: 100%;
+
+}
+
+/* 
+Navigation
+*/
+
+
 .nav-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   background-color: #242b31;
   size: 100%;
 }
 
-.nav-main.bar {
-  background-color: #242b31;
-  size: 100%;
+.nav-logo{
+  /* margin: 0 auto; */
+  padding: 0px 30px 8px 0px;
+  height: 35px;
+  width: 15em;
 }
-
+  
 /* 
 Style for the Blogs Component
 */
 .blog-container {
   margin: 0 auto;
-  /* width: 800px; */
   width: 50em;
   padding: 1em;
 }

@@ -13,14 +13,6 @@ import {
 
   
 
-const logoStyle = {
-  margin: '0px 80px 0px 0px',
-  padding: '0px 30px 8px 0px',
-  height: '60px',
-  width: '120px',
-
-}
-
 const mapStateToProps = state => {
   return {
     user: state.user
@@ -33,8 +25,9 @@ const mapDispatchToProps = {
 
 const Wrapper = styled.div`
 backgroud-color: #242b31;
-size: 100%
-`
+// margin: 0 auto;
+// width: 80%;
+`;
 
 class Navigation extends Component{
   constructor(props) {
@@ -51,30 +44,30 @@ class Navigation extends Component{
   render() {
     const {user = {}} = this.props;
 
-    return (
-        <Menu className='nav-main bar'>
-            {/* <img src={logo} alt="app_logo" style={logoStyle} /> */}
-            <Row>
-              <Col span={2} offset={5}>
+    return (      
+      <Menu className='nav-main'>
+            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+              <Col>
+                <Menu.Item key="home">
+                  <Link to='/' > <img className='nav-logo' src={logo} alt="app_logo" /></Link>
+                </Menu.Item>
+              </Col>
+              <Col>
                 <Menu.Item key="home">
                   <Link to="/">HOME</Link>
                 </Menu.Item>
               </Col>
-              <Col span={3}>
+              <Col>
                 <Menu.Item key="users">
                   <Link to="/Users"> USERS</Link>
                 </Menu.Item>
               </Col>
-              <Col span={5} style={{float: 'right'}}>
+              <Col>
                 <Menu.Item key="status">
-                  <Link to="/">
+                  <Link style={{marginRight: '20px'}} to="/">
                     <b>{user.name} is logged in</b>
                   </Link>
-                </Menu.Item>
-              </Col>
-              <Col span={2}>
-                <Menu.Item key="button">
-                    <Button
+                  <Button
                       type="primary"
                       danger
                       onClick={() => this.handleLogout()}

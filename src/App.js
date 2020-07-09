@@ -90,14 +90,14 @@ function App(props) {
   return (
     <Router>
       <Layout className="app-layout">
-        <Header className="nav-main">
+        <Header className="nav-header">
           <Navigation />
         </Header>
 
         <Content>
           <Notification />
           <Row>
-            <Col class='form-div' span={24}>
+            <Col span={24}>
               <Togglable buttonLabel='CREATE NEW' ref={blogFormRef}>
                 <NewBlog
                   user={user}
