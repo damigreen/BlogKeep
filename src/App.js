@@ -25,10 +25,11 @@ import { logout } from './reducers/userReducer'
 import { loginFromLocalStorage } from './reducers/userReducer'
 import { setNotification } from './reducers/notificationReducer'
 import  './App.css';
-import styled from 'styled-components'
 import {
   Layout,
 } from 'antd'
+import { Row, Col } from 'antd'
+
 
 
 function App(props) {
@@ -95,12 +96,13 @@ function App(props) {
 
         <Content>
           <Notification />
+          <Row>
+            <Col class='form-div' span={24}>
               <Togglable buttonLabel='CREATE NEW' ref={blogFormRef}>
                 <NewBlog
                   user={user}
                   blogFormRef={blogFormRef} />
               </Togglable>
-
 
               <Route exact path="/" render={() => (
                 <Blogs/>
@@ -117,7 +119,10 @@ function App(props) {
               <Route exact path="/Blogs/:id" render={( { match } ) => 
                 <BlogInfo blog={blogs.find(b => b.id === match.params.id)} />
               } 
-              /> 
+              />
+
+              </Col>
+          </Row>
 
         </Content>
         <Footer>
