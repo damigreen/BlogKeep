@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { Alert } from 'antd'
 
 const Notification = ({ message}) => {
 
@@ -11,7 +12,7 @@ const Notification = ({ message}) => {
 
   return (
     <div className={className}>
-      { message }
+      <Alert message={message} type="success" showIcon />
     </div>
   );
 };

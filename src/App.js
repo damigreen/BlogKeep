@@ -61,7 +61,7 @@ function App(props) {
 
 
   const handleLogin = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(`logging in with ${username.form.value}, ${password.form.value}`);
     try {
       props.login({ username: username.form.value, password: password.form.value })
