@@ -28,11 +28,11 @@ const Button = styled.button`
   padding: 0.5rem 0;
   margin: 0.5rem 1rem;
   display: inline-block;
-  border-radius: 3px;
-  background: grey;
+  border: 2px solid #242b31;
+  background: #242b31;
   float: right;
-  width: 10rem
-
+  width: 8rem;
+  
 `
 
 

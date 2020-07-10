@@ -75,8 +75,7 @@ function App(props) {
 
   if (user === null) {
     return(
-      <div>
-        <h1>log in to application</h1>
+      <div className='login-page'>
         <LoginForm
           username={username.form}
           password={password.form}

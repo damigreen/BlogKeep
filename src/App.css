@@ -46,6 +46,34 @@ Style for the App Component
 }
 
 /* 
+Login page
+*/
+
+.login-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  height: 45rem;
+  /* height: 720px; */
+}
+
+.login-page-center{
+  /* margin: 0 auto; */
+  width: 30rem;
+  height: 40vh;
+
+  border: 1px solid green;
+}
+.login-page-header{
+  height: 11vh;
+  background: no-repeat center url(../src/images/stock-photo-16260189.jpg);
+}
+
+
+
+/* 
 Navigation
 */
 .nav-main {
@@ -81,14 +109,15 @@ Style for the Blogs Component
   justify-content: space-between;
   width: 50em;
 }
-.col-list-flex {
+
+.col-list-flex .info{
   width: auto;
   padding: 5px;
 }
 
 .col-list-flex.header {
   background-color: #242b31;
-  width: 48em;
+  width: 50em;
   padding: 5px;
   height: 6vh;
   
@@ -133,18 +162,19 @@ Blog Content
 */
 
 .blog-text-foot{
-  font-family: Georgia, 'Times New Roman', Times, sans-serif;
+  font-family: Arial, Helvetica, serif;
   color: grey;
   font-size: 13;
   float: right;
 }
 
 .blog-content {
-  background-color: #E0e0e0;
   margin: 0 auto;
   width: 55%;
-  border-width: 1px 1px 1px 7px;
-  box-shadow: 0.1em 0.1em 0.1em 0.1em;
+  background-color: #f8f9fa;
+  border: 1px solid #eaecf0;
+  padding: 1em;
+  white-space: pre-wrap;
   overflow: hidden;
 }
 
