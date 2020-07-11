@@ -23,12 +23,6 @@ const mapDispatchToProps = {
   logout
 }
 
-const Wrapper = styled.div`
-backgroud-color: #242b31;
-// margin: 0 auto;
-// width: 80%;
-`;
-
 class Navigation extends Component{
   constructor(props) {
     super(props)

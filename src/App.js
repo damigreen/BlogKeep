@@ -92,16 +92,19 @@ function App(props) {
         <Header className="nav-header">
           <Navigation />
         </Header>
+        <div className='subnav'></div>
 
         <Content>
           <Notification />
-          <Row>
+          <Row style={{marginTop: '30px', marginBottom: '30px'}}>
             <Col span={24}>
               <Togglable buttonLabel='CREATE NEW' ref={blogFormRef}>
                 <NewBlog
                   user={user}
                   blogFormRef={blogFormRef} />
               </Togglable>
+              <br />
+
 
               <Route exact path="/" render={() => (
                 <Blogs/>
