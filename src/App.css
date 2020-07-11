@@ -3,7 +3,8 @@
 
 .App {
 
-  background-color: #ebebeb;
+  /* background-color: #ebebeb; */
+  background-color: #f4f4f4;
   
   width: 100%;
   margin: 0 auto;
@@ -35,15 +36,10 @@ Style for the App Component
 */
 
 .app-layout {
-  background-color: #ebebeb;
+  background-color: #f4f4f4;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.nav-header{
-  background-color: #242b31;
-  height: 10vh;
-  width: 100%;
-
-}
 
 /* 
 Login page
@@ -55,7 +51,7 @@ Login page
   align-items: center;
   justify-content: center;
   height: 45rem;
-  background-color: #ebebeb;
+  background-color: #f4f4f4;
   /* height: 720px; */
   /* border: 1px solid red; */
 }
@@ -102,20 +98,44 @@ Notification
 /* 
 Navigation
 */
+.nav-header{
+  background-color: #242b31;
+  height: 10vh;
+  width: 100%;
+  
+}
 .nav-main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
   background-color: #242b31;
-  size: 100%;
+  width: 100%;
+  height: 10vh;
 }
-
 .nav-logo{
   /* margin: 0 auto; */
   padding: 0px 30px 8px 0px;
   height: 35px;
   width: 15em;
+}
+.nav-content{
+  color: #fFFFFF;
+  height: 10vh;
+}
+.nav-text{
+  color: #FFFFFF;
+}
+.nav-content:hover{
+  /* change color */
+  /* background-color: #B20101 */
+  background-color: #CD2913;
+}
+.subnav{
+  background-color: #CD2913;
+  width: 200%;
+  height: 2vh;
+  z-index: 0;
 }
   
 /* 
@@ -146,6 +166,10 @@ Style for the Blogs Component
   width: 48em;
   padding: 5px;
   height: 6vh; 
+}
+
+.blog-text{
+  color: #000
 }
 
 .text {
@@ -185,11 +209,20 @@ Style for the Blogs Component
 /*
 Blog Content
 */
+.blog-info-flex{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-header{
+  font-weight: 600px;
+}
 
 .blog-text-foot{
-  font-family: Arial, Helvetica, serif;
   color: grey;
-  font-size: 13;
+  font-size: 11;
   float: right;
 }
 
