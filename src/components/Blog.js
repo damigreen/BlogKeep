@@ -17,17 +17,20 @@ const BlogWrapper = styled.div`
 const Blog = ({ blog, ...props }) => {
 
   const linkStyle = {
-    height: 70,
+    height: 50,
     backgroundColor: props.color,
+    color: '#eee'
   }
+
+  const author = blog.author ? blog.author : 'Anonymous';
 
   
   return (
     <BlogWrapper>
       <Row>
         <Col className="col-list-flex" style={linkStyle}>
-          <Link to={`/Blogs/${blog.id}`} style={{paddingLeft: '10px'}} >{blog.title}</Link>
-          <Link to={`/Blogs/${blog.id}`} style={{paddingRight: '10px'}} >{blog.author}</Link>
+          <Link classname='blog-text' to={`/Blogs/${blog.id}`} style={{paddingLeft: '10px', color: '#2F2F2F', textDecoration: 'underline'}} >{blog.title}</Link>
+          <Link to={`/Blogs/${blog.id}`} style={{paddingRight: '10px', color: '#2F2F2F'}} >{author}</Link>
         </Col>
       </Row>
 

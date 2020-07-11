@@ -95,16 +95,14 @@ function BlogInfo({ blog, ...props }) {
       <br />
       <br />
       <a href={blog.url} target='_blank'  rel="noopener noreferrer">
-        <div className='blog-info' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <br />
-          <br />
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <Row>
-            <Col className='col-header'><h2>{blog.title}</h2></Col>
+            <Col style={{fontSize: '24px', fontWeight: '900px'}}><h1>{blog.title}</h1></Col>
           </Row>
           <Divider orientation='center' >Blog info</Divider>
           <div>
-            <Row>
-              <Col><a style={{padding: '5px'}} target='_blank' rel="noopener noreferrer" href={blog.url}>{blog.url}</a></Col>
+            <Row style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+              <Col><a style={{padding: '5px', fontSize: '16px'}} target='_blank' rel="noopener noreferrer" href={blog.url}>{blog.url}</a></Col>
             </Row>
             <br />
             <Row className='col-list-flex info' >
