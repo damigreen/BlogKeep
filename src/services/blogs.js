@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3003/api/blogs';
+// const baseUrl = 'http://localhost:3003/api/blogs';
+const baseUrl = BACKEND_URL;
+
 
 let token = null;
 

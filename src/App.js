@@ -39,6 +39,8 @@ function App(props) {
   let user = props.user
   let blogs = props.blogs
 
+  console.log(BACKEND_URL);
+
   const { Header, Content, Footer } = Layout
 
   const blogFormRef = React.createRef();
