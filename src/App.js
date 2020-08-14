@@ -39,8 +39,6 @@ function App(props) {
   let user = props.user
   let blogs = props.blogs
 
-  console.log(BACKEND_URL);
-
   const { Header, Content, Footer } = Layout
 
   const blogFormRef = React.createRef();
@@ -89,52 +87,54 @@ function App(props) {
 
 
   return (
-    <Router>
-      <Layout className="app-layout">
-        <Header className="nav-header">
-          <Navigation />
-        </Header>
-        <div className='subnav'></div>
+    <React.Fragment className="App">
+      <Router>
+        <Layout className="app-layout">
+          <Header className="nav-header">
+            <Navigation />
+          </Header>
+          <div className='subnav'></div>
 
-        <Content>
-          <Notification />
-          <Row style={{marginTop: '30px', marginBottom: '30px'}}>
-            <Col span={24}>
-              <Togglable buttonLabel='CREATE NEW' ref={blogFormRef}>
-                <NewBlog
-                  user={user}
-                  blogFormRef={blogFormRef} />
-              </Togglable>
-              <br />
+          <Content>
+            <Notification />
+            <Row style={{marginTop: '30px', marginBottom: '30px'}}>
+              <Col span={24}>
+                <Togglable buttonLabel='CREATE NEW' ref={blogFormRef}>
+                  <NewBlog
+                    user={user}
+                    blogFormRef={blogFormRef} />
+                </Togglable>
+                <br />
 
 
-              <Route exact path="/" render={() => (
-                <Blogs/>
-              )} 
-              />
-              <Route exact path="/Users" render={() => 
-                <Users users={users}/>
-              } 
-              />
-              <Route exact path="/Users/:id" render={( { match } ) =>  
-                <User user={users.find(u => u.id === match.params.id)} />
-              } 
-              />
-              <Route exact path="/Blogs/:id" render={( { match } ) => 
-                <BlogInfo blog={blogs.find(b => b.id === match.params.id)} />
-              } 
-              />
+                <Route exact path="/" render={() => (
+                  <Blogs/>
+                )} 
+                />
+                <Route exact path="/Users" render={() => 
+                  <Users users={users}/>
+                } 
+                />
+                <Route exact path="/Users/:id" render={( { match } ) =>  
+                  <User user={users.find(u => u.id === match.params.id)} />
+                } 
+                />
+                <Route exact path="/Blogs/:id" render={( { match } ) => 
+                  <BlogInfo blog={blogs.find(b => b.id === match.params.id)} />
+                } 
+                />
 
-              </Col>
-          </Row>
+                </Col>
+            </Row>
 
-        </Content>
-        <Footer>
-          <div>Footer Conetent</div>
-        </Footer>
+          </Content>
+          <Footer id="footer">
+          <p>Copyright &copy; 2020 BlogKeep by Damilola Faseun</p>
+          </Footer>
 
-      </Layout>
-    </Router>
+        </Layout>
+      </Router>
+    </React.Fragment>
 );
 }
 

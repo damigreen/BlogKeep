@@ -6,7 +6,7 @@
   /* background-color: #ebebeb; */
   background-color: #f4f4f4;
   
-  width: 100%;
+  width: 950px;
   margin: 0 auto;
 
   
@@ -38,6 +38,10 @@ Style for the App Component
 .app-layout {
   background-color: #f4f4f4;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: 1px solid brown;
+  /* margin: 0 auto; */
+  width: 100%;
+
 }
 
 
@@ -133,7 +137,7 @@ Navigation
 }
 .subnav{
   background-color: #CD2913;
-  width: 200%;
+  width: 100%;
   height: 2vh;
   z-index: 0;
 }
@@ -253,4 +257,23 @@ Blog Content
   width: 55em;
   padding: 10px;
   padding-left: 10px;
+}
+
+/* 
+Footer
+*/
+
+#footer {
+  margin: 0 auto;
+  width: 100%;
+	padding: 10px 20px 10px 20px;
+	clear: both;
+	background: #447236;
+	text-align: center;
+	color: #fff;
+}
+
+#footer p {
+	margin: 10px 0 0 0;
+	font-size: small;
 }

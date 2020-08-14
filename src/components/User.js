@@ -4,7 +4,6 @@ function User ({ user }) {
   if (user === undefined) {
     return null
   }
-  console.log(user.blogs)
 
   return (
     <div>

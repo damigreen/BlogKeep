@@ -21,11 +21,11 @@
     "styled-components": "^5.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "start:webpack": "webpack-dev-server --mode=development",
+    "start": "webpack-dev-server --mode=development",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "copy:build": "cp -r build ../backend"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,5 +54,6 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "proxy": "http://localhost:3003"  
 }

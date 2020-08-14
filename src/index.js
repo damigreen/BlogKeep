@@ -6,7 +6,6 @@ import 'antd/dist/antd.css';
 
 const rootEl = document.getElementById('root');
 
-console.log(`webpack onfig:===================================================`)
 
 let render = () => {
   const App = require('./App').default;

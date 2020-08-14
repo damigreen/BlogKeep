@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 
 function Users ({ users }) {
 
+  if (users === undefined) {
+    return null;
+  }
+
   return (
     <div>
       <h2>Users</h2>
